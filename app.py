@@ -105,7 +105,7 @@ def main():
         }
         </style>
         <div class="footer">
-            Developed by Mahdiyeh Sadat Mohajerani with ❤️ | Centria University of Applied Sciences
+            Developed by Mahdiyeh Sadat Mohajeri with ❤️ | Centria University of Applied Sciences
         </div>
         """, unsafe_allow_html=True)
 
