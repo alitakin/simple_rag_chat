@@ -161,4 +161,3 @@ cython_debug/
 
 
 .streamlit/secrets.toml
-faiss_index/*
