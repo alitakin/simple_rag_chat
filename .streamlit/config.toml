@@ -1,0 +1,17 @@
+# .streamlit/config.toml
+
+[theme]
+base="light"
+
+[deprecation]
+showPyplotGlobalUse = false
+
+[browser]
+# Disable the footer
+gatherUsageStats = false
+# Remove Streamlit's branding from the bottom of the sidebar
+showSidebarFooter = false
+
+[menu]
+# Disable the hamburger menu "Report a bug" link
+showReportBug = false

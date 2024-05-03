@@ -82,53 +82,41 @@ import streamlit as st
 def main():
     st.set_page_config(page_title="Style Advisor: Interactive Fashion Chat")
     st.header("Fashion Assistant💁: Powered by AWS Bedrock")
-    # Add custom CSS to hide the GitHub icon
-    hide_github_icon = """
-    #GithubIcon {
-      visibility: hidden;
-    }
-    """
-    st.markdown(hide_github_icon, unsafe_allow_html=True)
 
-
-    st.markdown(
-    """
+    # Consolidate custom CSS
+    custom_css = """
     <style>
+    #GithubIcon {
+        visibility: hidden;
+    }
     .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
     .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
     .viewerBadge_text__1JaDK {
         display: none;
     }
+    .footer {
+        font-size: 16px;
+        font-weight: bold;
+        color: #2E2E2E;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        left: 0;    /* Ensures the footer starts from the far left */
+        width: 100%;    /* Ensures the footer extends full width */
+        background-color: transparent;
+        z-index: 100;  /* Ensures the footer stays on top of other elements */
+    }
+    /* Additional style to ensure Streamlit's own footer is not interfering */
+    .css-1wrcr25 {
+        display: none; /* This class name might change with Streamlit updates */
+    }
     </style>
-    """,
-    unsafe_allow_html=True
-)
-
-    # Adding a custom footer using markdown with unsafe_allow_html
-    st.markdown("""
-        <style>
-        .footer {
-            font-size: 16px;
-            font-weight: bold;
-            color: #2E2E2E;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            left: 0;    /* Ensures the footer starts from the far left */
-            width: 100%;    /* Ensures the footer extends full width */
-            background-color: transparent;
-            z-index: 100;  /* Ensures the footer stays on top of other elements */
-        }
-        /* Additional style to ensure Streamlit's own footer is not interfering */
-        .css-1wrcr25 {
-            display: none; /* This class name might change with Streamlit updates */
-        }
-        </style>
-        <div class="footer">
-            Developed by Mahdiyeh Sadat Mohajeri with ❤️ | Centria University of Applied Sciences
-        </div>
-        """, unsafe_allow_html=True)
+    <div class="footer">
+        Developed by Mahdiyeh Sadat Mohajeri with ❤️ | Centria University of Applied Sciences
+    </div>
+    """
+    st.markdown(custom_css, unsafe_allow_html=True)
 
     user_question = st.text_input("Ask a Question from the PDF Files")
 
